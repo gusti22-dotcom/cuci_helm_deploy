@@ -1,0 +1,91 @@
+<svg width="200" height="200" viewBox="0 0 200 200" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Logo HelmWash Pro</title>
+  <desc>Logo berbentuk lingkaran dengan gambar helm cuci di tengah</desc>
+
+  <defs>
+    <path id="topArc" d="M 100,100 m -80,0 a 80,80 0 1,1 160,0" />
+    <path id="bottomArc" d="M 100,100 m -62,0 a 62,62 0 0,0 124,0" />
+  </defs>
+
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="97" fill="#13161E"/>
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#FF6B2B" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#FF6B2B" stroke-width="0.8" stroke-dasharray="3 5"/>
+  <circle cx="100" cy="100" r="78" fill="#0D0F14"/>
+
+  <!-- === HELM SHAPE === -->
+  <path d="M 52,112 Q 51,79 61,64 Q 72,48 100,44 Q 128,48 139,64 Q 149,79 148,112 Z"
+        fill="#232636" stroke="#FF6B2B" stroke-width="1.8"/>
+  <!-- Visor dark zone -->
+  <path d="M 60,112 Q 61,92 66,83 Q 74,72 100,69 Q 126,72 134,83 Q 139,92 140,112 Z"
+        fill="#0D0F14"/>
+  <!-- Visor glass -->
+  <path d="M 65,112 Q 66,95 70,88 Q 77,78 100,75 Q 123,78 130,88 Q 134,95 135,112 Z"
+        fill="#0f1a35" opacity="0.95"/>
+  <!-- Visor glare -->
+  <path d="M 76,82 Q 84,78 96,77 L 96,82 Q 85,83 78,89 Z" fill="white" opacity="0.2"/>
+
+  <!-- Chin guard -->
+  <path d="M 52,112 Q 51,121 59,126 L 75,129 L 100,130 L 125,129 L 141,126 Q 149,121 148,112 Z"
+        fill="#1F2330" stroke="#FF6B2B" stroke-width="1.2"/>
+
+  <!-- Chin strap buckles -->
+  <circle cx="68" cy="124" r="3" fill="#FF6B2B"/>
+  <circle cx="132" cy="124" r="3" fill="#FF6B2B"/>
+
+  <!-- Top vent -->
+  <rect x="88" y="44" width="24" height="7" rx="3" fill="#FF6B2B" opacity="0.9"/>
+  <rect x="94" y="41" width="3" height="5" rx="1" fill="#FF6B2B"/>
+  <rect x="101" y="41" width="3" height="5" rx="1" fill="#FF6B2B"/>
+
+  <!-- Side vents left -->
+  <rect x="52" y="87" width="9" height="4" rx="1.5" fill="#FF6B2B" opacity="0.7"/>
+  <rect x="52" y="94" width="9" height="4" rx="1.5" fill="#FF6B2B" opacity="0.7"/>
+  <!-- Side vents right -->
+  <rect x="139" y="87" width="9" height="4" rx="1.5" fill="#FF6B2B" opacity="0.7"/>
+  <rect x="139" y="94" width="9" height="4" rx="1.5" fill="#FF6B2B" opacity="0.7"/>
+
+  <!-- === SPONGE (kiri bawah) === -->
+  <g transform="translate(62, 130) rotate(-15)">
+    <rect x="0" y="0" width="26" height="16" rx="4" fill="#F59E0B"/>
+    <circle cx="6" cy="6" r="2.5" fill="#D97706"/>
+    <circle cx="13" cy="4.5" r="2" fill="#D97706"/>
+    <circle cx="20" cy="6" r="2" fill="#D97706"/>
+    <circle cx="9" cy="12" r="2" fill="#D97706"/>
+    <circle cx="17" cy="12.5" r="2" fill="#D97706"/>
+    <rect x="10" y="14" width="6" height="10" rx="2" fill="#D97706"/>
+  </g>
+
+  <!-- === BUBBLES (busa) === -->
+  <!-- Left cluster -->
+  <circle cx="43" cy="82" r="7" fill="none" stroke="#60a5fa" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="50" cy="72" r="4.5" fill="none" stroke="#93c5fd" stroke-width="1.2" opacity="0.7"/>
+  <circle cx="37" cy="71" r="5.5" fill="none" stroke="#60a5fa" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="41" cy="81" r="1.5" fill="white" opacity="0.4"/>
+  <!-- Right cluster -->
+  <circle cx="157" cy="78" r="7" fill="none" stroke="#60a5fa" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="164" cy="68" r="4.5" fill="none" stroke="#93c5fd" stroke-width="1.2" opacity="0.7"/>
+  <circle cx="150" cy="68" r="5" fill="none" stroke="#60a5fa" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="155" cy="76" r="1.5" fill="white" opacity="0.4"/>
+  <!-- Bottom small bubbles -->
+  <circle cx="83" cy="145" r="4" fill="none" stroke="#60a5fa" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="118" cy="147" r="4.5" fill="none" stroke="#93c5fd" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="101" cy="148" r="3" fill="none" stroke="#bfdbfe" stroke-width="1" opacity="0.5"/>
+
+  <!-- Water drops -->
+  <path d="M 84,53 Q 86,48 88,53 Q 88,58 84,58 Q 80,58 80,53 Q 82,48 84,53 Z" fill="#60a5fa" opacity="0.6"/>
+  <path d="M 116,51 Q 118,46 120,51 Q 120,56 116,56 Q 112,56 112,51 Q 114,46 116,51 Z" fill="#60a5fa" opacity="0.6"/>
+
+  <!-- === CURVED TEXT (top arc) === -->
+  <text font-family="Arial Black, Impact, sans-serif" font-size="10.5" font-weight="900" fill="#FF6B2B" letter-spacing="2">
+    <textPath href="#topArc" startOffset="4%">CUCI HELM PRO • JASA CUCI HELM •</textPath>
+  </text>
+
+  <!-- Brand text center bottom -->
+  <text font-family="Arial Black, sans-serif" font-size="8" font-weight="900" fill="#FF6B2B" text-anchor="middle" x="100" y="167" letter-spacing="3">HELMWASH</text>
+  <text font-family="Arial, sans-serif" font-size="6" fill="#8B92A9" text-anchor="middle" x="100" y="176" letter-spacing="2">PROFESSIONAL</text>
+
+  <!-- Stars bottom -->
+  <text font-family="Arial, sans-serif" font-size="7" fill="#FF6B2B" text-anchor="middle" x="100" y="188">★ ★ ★ ★ ★</text>
+
+</svg>
