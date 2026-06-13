@@ -32,7 +32,7 @@ class TransaksiController extends Controller
         $totalPendapatan = $transaksi->where('status', 'selesai')->sum('total_harga');
         $totalPesanan    = $transaksi->count();
 
-        $years = Pesanan::selectRaw('YEAR(tanggal) as tahun')
+        $years = Pesanan::selectRaw("strftime('%Y', tanggal) as tahun")
             ->distinct()->orderByDesc('tahun')->pluck('tahun');
 
         return view('transaksi.index', compact(
