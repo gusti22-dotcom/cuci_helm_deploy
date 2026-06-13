@@ -21,7 +21,7 @@ class LaporanController extends Controller
 
         $laporanLayanan = $this->queryLayanan($filterBulan, $filterTahun);
 
-        $years = Pesanan::selectRaw('YEAR(tanggal) as tahun')
+        $years = Pesanan::selectRaw("strftime('%Y', tanggal) as tahun")
             ->distinct()->orderByDesc('tahun')->pluck('tahun');
 
         // Pastikan tahun sekarang selalu ada di list
@@ -37,10 +37,6 @@ class LaporanController extends Controller
         ));
     }
 
-    /**
-     * API endpoint — mengembalikan SEMUA data laporan (harian + per layanan + stats)
-     * untuk update real-time tanpa reload
-     */
     public function getData(Request $request)
     {
         $filterBulan = $request->get('bulan', now()->format('m'));
@@ -56,7 +52,6 @@ class LaporanController extends Controller
         $maxPendapatan   = $harian->max('pendapatan') ?: 1;
 
         return response()->json([
-            // Stat summary
             'stats' => [
                 'total_pendapatan'    => $totalPendapatan,
                 'total_pendapatan_fmt'=> 'Rp ' . number_format($totalPendapatan, 0, ',', '.'),
@@ -65,8 +60,6 @@ class LaporanController extends Controller
                 'rata_hari'           => $rataHari,
                 'rata_hari_fmt'       => 'Rp ' . number_format($rataHari, 0, ',', '.'),
             ],
-
-            // Data chart bars harian
             'harian' => $harian->map(fn($item) => [
                 'tanggal'        => \Carbon\Carbon::parse($item->tanggal)->format('d'),
                 'tanggal_full'   => \Carbon\Carbon::parse($item->tanggal)->format('d/m/Y'),
@@ -78,8 +71,6 @@ class LaporanController extends Controller
                 'pendapatan_fmt' => 'Rp ' . number_format($item->pendapatan, 0, ',', '.'),
                 'persen'         => $maxPendapatan > 0 ? round($item->pendapatan / $maxPendapatan * 100, 1) : 0,
             ]),
-
-            // Data tabel per layanan
             'layanan' => $layanan->map(fn($item) => [
                 'nama_layanan'       => $item->nama_layanan,
                 'total_pesanan'      => $item->total_pesanan,
@@ -88,8 +79,6 @@ class LaporanController extends Controller
             ]),
         ]);
     }
-
-    // Private helpers
 
     private function queryHarian($bulan, $tahun)
     {
